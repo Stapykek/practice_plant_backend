@@ -1,0 +1,1 @@
+export const NATS_HOST: string = process.env.NATS_HOST || '127.0.0.1:4222'
