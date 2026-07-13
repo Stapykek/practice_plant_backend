@@ -1,18 +1,4 @@
-import { NestFactory } from '@nestjs/core';
 import { UserMicroserviceModule } from './user-microservice.module';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { NATS_HOST } from '@app/constants'
+import { bootstrapNatsMicroservice } from '@app/infrastructure';
 
-async function bootstrap() {
-  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    UserMicroserviceModule,
-    {
-      transport: Transport.NATS,
-      options: {
-        servers: [NATS_HOST],
-      },
-    },
-  );
-  await app.listen();
-}
-bootstrap();
+bootstrapNatsMicroservice(UserMicroserviceModule, 'user');

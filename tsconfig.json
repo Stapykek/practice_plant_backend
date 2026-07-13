@@ -22,17 +22,17 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/constants": [
-        "libs/constants/src"
+      "@app/database": [
+        "libs/database/src"
       ],
-      "@app/constants/*": [
-        "libs/constants/src/*"
+      "@app/database/*": [
+        "libs/database/src/*"
       ],
-      "@app/shared": [
-        "libs/shared/src"
+      "@app/infrastructure": [
+        "libs/infrastructure/src"
       ],
-      "@app/shared/*": [
-        "libs/shared/src/*"
+      "@app/infrastructure/*": [
+        "libs/infrastructure/src/*"
       ],
       "@app/types": [
         "libs/types/src"
