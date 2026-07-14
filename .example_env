@@ -1,0 +1,12 @@
+# Gateway settings
+API_PORT=3000
+
+# Postgres settings
+PG_DB_HOST=127.0.0.1
+PG_DB_PORT=5432
+PG_DB_NAME=leafy
+PG_DB_USER=postgres
+PG_DB_PASS=postgres
+
+# NATS settings
+NATS_URL=127.0.0.1:4222
