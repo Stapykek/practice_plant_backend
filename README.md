@@ -39,14 +39,18 @@
     *Прим.: аргумент "--watch" включит **горячий перезапуск**, т.е. изменения 
     будут применяться сразу же после сохранения файлов с кодом*
 
-## Установленные модули
+## Используемые модули
 * @nestjs/common
 * @nestjs/core
 * @nestjs/microservices
 * @nestjs/config
+* @nestjs/jwt
+* @nestjs/swagger
+* dotenv
 * nats
 * class-validator
 * class-transformer
 * typeorm
 * pg
+* bcrypt
 

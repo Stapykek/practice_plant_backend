@@ -8,6 +8,8 @@ export interface IUser {
   userRole: UserRole
 }
 
+export type ParamUser = Pick<IUser, 'userId' | 'login' | 'userRole'>
+
 export enum UserRole {
   STANDARD = 'standard',
   ADMIN = 'admin',
@@ -25,8 +27,8 @@ export interface ICreateUserResponse {
 }
 
 export interface IUpdateUserRequest {
-  password?: string
-  name?: string
+  userId: string
+  name: string
 }
 
 export type IUpdateUserResponse = ISuccessResponse
@@ -35,7 +37,14 @@ export interface IGetUserRequest {
   userId: string
 }
 
+
 export type IGetUserResponse = Omit<IUser, 'password'>
+
+export interface IFindUserRequest {
+  login: string
+}
+
+export type IFindUserResponse = IUser
 
 export interface IDeleteUserRequest {
   userId: string
@@ -47,5 +56,6 @@ export type CreateUserResponse = ServiceResponse<ICreateUserResponse>
 export type UpdateUserResponse = ServiceResponse<IUpdateUserResponse>
 export type GetUserResponse = ServiceResponse<IGetUserResponse>
 export type DeleteUserResponse = ServiceResponse<IDeleteUserResponse>
+export type FindUserResponse = ServiceResponse<IFindUserResponse>
 
 

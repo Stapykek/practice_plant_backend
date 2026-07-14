@@ -59,10 +59,10 @@
         "libs/types/src/*"
       ],
       "@app/utils": [
-        "libs/utils/src",
+        "libs/utils/src"
       ],
       "@app/utils/*": [
-        "libs/utils/src/*",
+        "libs/utils/src/*"
       ]
     }
   }

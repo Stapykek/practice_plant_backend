@@ -10,6 +10,15 @@
   "monorepo": true,
   "root": "apps/practice_plant_backend",
   "projects": {
+    "auth-microservice": {
+      "type": "application",
+      "root": "apps/auth-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth-microservice/tsconfig.app.json"
+      }
+    },
     "constants": {
       "type": "library",
       "root": "libs/constants",

@@ -1,5 +1,5 @@
 import { ServiceResponse, ErrorResponse } from '@app/types'
-import { HttpException, HttpStatus } from '@nestjs/common'
+import { HttpException } from '@nestjs/common'
 
 export function handleServiceResponse<T>(res: ServiceResponse<T>): T {
   if (isErrorResponse(res)){
@@ -9,6 +9,6 @@ export function handleServiceResponse<T>(res: ServiceResponse<T>): T {
   return res as T
 }
 
-function isErrorResponse(obj: any): boolean {
-  return 'status' in obj && typeof obj.status === typeof HttpStatus && 'message' in obj && typeof obj.message === 'string'
+export function isErrorResponse(obj: any): boolean {
+  return 'status' in obj && typeof obj.status === "number" && 'message' in obj && typeof obj.message === 'string'
 }

@@ -1,23 +1,34 @@
-import { Body, Controller, Inject, Post } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
-import * as DTO from './dto';
+import { Body, Controller, Get, Inject, Patch } from '@nestjs/common'
+import { ClientProxy } from '@nestjs/microservices'
 import { UserSubject } from '@app/constants'
-import { firstValueFrom } from 'rxjs'
-import { CreateUserResponse } from '@app/types'
-import { handleServiceResponse } from '@app/utils'
+import { lastValueFrom } from 'rxjs'
+import * as types from '@app/types'
+import * as DTO from './dto'
+import { handleServiceResponse, User } from '@app/utils'
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
+import { GetUserResponse, UpdateUserResponse } from '@app/types'
 
+@ApiTags('UserController')
+@ApiBearerAuth()
 @Controller('user')
 export class UserController {
-
   constructor(
-    @Inject('NATS_SERVICE') private readonly natsClient: ClientProxy
+    @Inject('NATS_SERVICE') private readonly natsClient: ClientProxy,
   ) {}
 
-  @Post()
-  async createUser(@Body() body: DTO.CreateUserRequestDto){
-    const response = await firstValueFrom(this.natsClient.send<CreateUserResponse>({cmd: UserSubject.CREATE_USER}, body))
-    return handleServiceResponse(response)
+  @Get()
+  @ApiBearerAuth()
+  async getUser(@User() user: types.ParamUser) {
+    const { userId } = user
+    const result = await lastValueFrom(this.natsClient.send<GetUserResponse>({cmd: UserSubject.GET_USER}, { userId }))
+    return handleServiceResponse(result)
   }
 
-
+  @Patch()
+  @ApiBearerAuth()
+  async updateUser(@User() user: types.ParamUser, @Body() body: DTO.UpdateUserRequestDto) {
+    const { userId } = user
+    const result = await lastValueFrom(this.natsClient.send<UpdateUserResponse>({cmd: UserSubject.UPDATE_USER}, { userId, ...body }))
+    return handleServiceResponse(result)
+  }
 }

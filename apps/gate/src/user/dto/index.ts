@@ -1,1 +1,1 @@
-export { CreateUserRequestDto } from './createUserRequest.dto'
+export { UpdateUserRequestDto } from './updateUserRequest.dto'

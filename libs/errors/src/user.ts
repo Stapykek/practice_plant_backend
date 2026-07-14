@@ -8,5 +8,17 @@ export const UserError = {
   NOT_CREATED: {
     status: HttpStatus.CONFLICT,
     message: `user was not created`
+  },
+  FORBIDDEN: {
+    status: HttpStatus.FORBIDDEN,
+    message: `this action is forbidden`
+  },
+  NOT_UPDATED: {
+    status: HttpStatus.CONFLICT,
+    message: `user was not updated`
+  },
+  INCORRECT: {
+    status: HttpStatus.BAD_REQUEST,
+    message: `incorrect login or password`
   }
 }
