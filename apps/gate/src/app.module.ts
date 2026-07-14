@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
+import { DatabaseModule } from '@app/database';
 
 @Module({
   imports: [
@@ -8,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
       envFilePath: [`${process.env.NODE_ENV}.env`, '.env'],
     }),
+    DatabaseModule,
     UserModule
   ],
   controllers: [],
