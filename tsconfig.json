@@ -22,6 +22,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@app/constants": [
+        "libs/constants/src"
+      ],
+      "@app/constants/*": [
+        "libs/constants/src/*"
+      ],
       "@app/database": [
         "libs/database/src"
       ],
@@ -34,6 +40,12 @@
       "@app/entities/*": [
         "libs/entities/src/*"
       ],
+      "@app/errors": [
+        "libs/errors/src"
+      ],
+      "@app/errors/*": [
+        "libs/errors/src/*"
+      ],
       "@app/infrastructure": [
         "libs/infrastructure/src"
       ],
@@ -45,6 +57,12 @@
       ],
       "@app/types/*": [
         "libs/types/src/*"
+      ],
+      "@app/utils": [
+        "libs/utils/src",
+      ],
+      "@app/utils/*": [
+        "libs/utils/src/*",
       ]
     }
   }

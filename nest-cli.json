@@ -10,6 +10,15 @@
   "monorepo": true,
   "root": "apps/practice_plant_backend",
   "projects": {
+    "constants": {
+      "type": "library",
+      "root": "libs/constants",
+      "entryFile": "index",
+      "sourceRoot": "libs/constants/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/constants/tsconfig.lib.json"
+      }
+    },
     "database": {
       "type": "library",
       "root": "libs/database",
@@ -26,6 +35,15 @@
       "sourceRoot": "libs/entities/src",
       "compilerOptions": {
         "tsConfigPath": "libs/entities/tsconfig.lib.json"
+      }
+    },
+    "errors": {
+      "type": "library",
+      "root": "libs/errors",
+      "entryFile": "index",
+      "sourceRoot": "libs/errors/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/errors/tsconfig.lib.json"
       }
     },
     "gate": {
@@ -62,6 +80,15 @@
       "sourceRoot": "apps/user-microservice/src",
       "compilerOptions": {
         "tsConfigPath": "apps/user-microservice/tsconfig.app.json"
+      }
+    },
+    "utils": {
+      "type": "library",
+      "root": "libs/utils",
+      "entryFile": "index",
+      "sourceRoot": "libs/utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/utils/tsconfig.lib.json"
       }
     }
   }

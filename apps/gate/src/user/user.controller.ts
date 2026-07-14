@@ -1,6 +1,10 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import * as DTO from './dto';
+import { UserSubject } from '@app/constants'
+import { firstValueFrom } from 'rxjs'
+import { CreateUserResponse } from '@app/types'
+import { handleServiceResponse } from '@app/utils'
 
 @Controller('user')
 export class UserController {
@@ -11,7 +15,9 @@ export class UserController {
 
   @Post()
   async createUser(@Body() body: DTO.CreateUserRequestDto){
-    console.log(body);
-    return this.natsClient.send({cmd: 'createUser'}, body);
+    const response = await firstValueFrom(this.natsClient.send<CreateUserResponse>({cmd: UserSubject.CREATE_USER}, body))
+    return handleServiceResponse(response)
   }
+
+
 }
