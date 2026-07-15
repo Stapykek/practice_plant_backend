@@ -73,6 +73,15 @@
         "tsConfigPath": "libs/infrastructure/tsconfig.lib.json"
       }
     },
+    "plant-type-microservice": {
+      "type": "application",
+      "root": "apps/plant-type-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/plant-type-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/plant-type-microservice/tsconfig.app.json"
+      }
+    },
     "types": {
       "type": "library",
       "root": "libs/types",

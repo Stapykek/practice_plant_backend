@@ -28,14 +28,19 @@ export class UserService {
     }
 
     const user = this.userRepository.create(request)
-    await user.save()
-    await user.reload()
 
-    if (!user) {
+    try {
+      await user.save()
+      await user.reload()
+
+    } catch (error) {
+      console.log(error)
       return UserError.NOT_CREATED
     }
 
-    return user
+    const {password, ...userData} = user
+
+    return userData
   }
   
   public async update(request: IUpdateUserRequest): Promise<UpdateUserResponse> {
@@ -49,14 +54,18 @@ export class UserService {
 
     user.name = name
 
-    await user.save()
-    await user.reload()
+    try {
+      await user.save()
+      await user.reload()
 
-    if (!user) {
+    } catch (error) {
+      console.log(error)
       return UserError.NOT_UPDATED
     }
 
-    return {success: true}
+    const {password, ...userData} = user
+
+    return userData
   }
 
   public async delete(request: IDeleteUserRequest): Promise<DeleteUserResponse> {

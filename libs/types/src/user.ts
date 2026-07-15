@@ -22,23 +22,22 @@ export interface ICreateUserRequest {
   userRole: UserRole
 }
 
-export interface ICreateUserResponse {
-  userId: string
-}
+export type IUserResponse = Omit<IUser, 'password'>
+
+export type ICreateUserResponse = IUserResponse
 
 export interface IUpdateUserRequest {
   userId: string
   name: string
 }
 
-export type IUpdateUserResponse = ISuccessResponse
+export type IUpdateUserResponse = IUserResponse
 
 export interface IGetUserRequest {
   userId: string
 }
 
-
-export type IGetUserResponse = Omit<IUser, 'password'>
+export type IGetUserResponse = IUserResponse
 
 export interface IFindUserRequest {
   login: string

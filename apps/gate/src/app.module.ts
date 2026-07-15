@@ -7,6 +7,7 @@ import { AuthGuard } from '@app/infrastructure'
 import { JwtModule } from '@nestjs/jwt'
 import { jwtConstants } from '@app/constants'
 import { AuthModule } from './auth/auth.module'
+import { PlantTypeModule } from './plant-type/plantType.module'
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { AuthModule } from './auth/auth.module'
     DatabaseModule,
     UserModule,
     AuthModule,
+    PlantTypeModule,
   ],
   controllers: [],
   providers: [{

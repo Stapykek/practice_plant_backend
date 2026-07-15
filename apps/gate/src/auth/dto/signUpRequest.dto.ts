@@ -1,8 +1,8 @@
 import { IsNotEmpty, IsString, MinLength } from 'class-validator';
-import { ISignInRequest } from '@app/types/auth'
+import { ISignUpRequest } from '@app/types/auth'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class SignInRequest implements ISignInRequest {
+export class SignUpRequestDto implements ISignUpRequest {
   @ApiProperty(
     {
       name: 'login',
@@ -27,4 +27,16 @@ export class SignInRequest implements ISignInRequest {
   @IsString()
   @MinLength(8)
   password: string
+
+  @ApiProperty(
+    {
+      name: 'name',
+      type: 'string',
+      required: true,
+      example: 'Андрей'
+    }
+  )
+  @IsNotEmpty()
+  @IsString()
+  name: string
 }

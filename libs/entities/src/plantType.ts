@@ -60,7 +60,7 @@ export class PlantType extends BaseEntity implements IPlantType {
   @Column({
     type: 'text',
     name: 'image',
-    nullable: false
+    nullable: true
   })
-  image: string
+  image?: string
 }

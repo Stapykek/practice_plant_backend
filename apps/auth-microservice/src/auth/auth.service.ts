@@ -9,7 +9,7 @@ import { UserService } from '../../../user-microservice/src/user/user.service'
 import * as bcrypt from 'bcrypt'
 import { isErrorResponse } from '@app/utils'
 import { AuthError } from '@app/errors'
-import { IUser, UserRole } from '@app/types'
+import { ICreateUserResponse, IUser, UserRole } from '@app/types'
 import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
@@ -33,7 +33,7 @@ export class AuthService {
       return AuthError.INCORRECT_CREDENTIALS
     }
 
-    const jwt_payload = { userId: user.userId, login: user.login, role: user.userRole }
+    const jwt_payload = { userId: user.userId, login: user.login, userRole: user.userRole }
 
     return { token: await this.jwtService.signAsync(jwt_payload) }
   }
@@ -55,7 +55,9 @@ export class AuthService {
       return AuthError.FORBIDDEN
     }
 
-    return { success: true }
+    const result = createResult as ICreateUserResponse
+
+    return result
   }
 
   async signUpStandard(request: ISignUpRequest): Promise<SignUpResponse> {

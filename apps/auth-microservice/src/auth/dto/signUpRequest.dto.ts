@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString, MinLength } from 'class-validator';
 import { ISignUpRequest } from '@app/types/auth'
 
-export class SignUpRequest implements ISignUpRequest {
+export class SignUpRequestDto implements ISignUpRequest {
   @IsNotEmpty()
   @IsString()
   login: string

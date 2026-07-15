@@ -1,4 +1,7 @@
-import { ISuccessResponse, ServiceResponse } from '@app/types'
+import {
+  IUserResponse,
+  ServiceResponse,
+} from '@app/types'
 
 export interface ISignInRequest {
   login: string
@@ -11,7 +14,7 @@ export interface ISignUpRequest {
   password: string
 }
 
-export type ISignUpResponse = ISuccessResponse
+export type ISignUpResponse = IUserResponse
 
 export interface ISignInResponse {
   token: string

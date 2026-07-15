@@ -10,17 +10,17 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @MessagePattern({cmd: AuthSubject.SIGN_IN})
-  async signIn(@Payload() payload: DTO.SignInRequest): Promise<SignInResponse>{
+  async signIn(@Payload() payload: DTO.SignInRequestDto): Promise<SignInResponse>{
     return this.authService.signIn(payload)
   }
 
   @MessagePattern({cmd: AuthSubject.SIGN_UP_ADMIN})
-  async signUpAdmin(@Payload() payload: DTO.SignUpRequest): Promise<SignUpResponse>{
+  async signUpAdmin(@Payload() payload: DTO.SignUpRequestDto): Promise<SignUpResponse>{
     return this.authService.signUpAdmin(payload)
   }
 
   @MessagePattern({cmd: AuthSubject.SIGN_UP_STANDARD})
-  async signUpStandard(@Payload() payload: DTO.SignUpRequest): Promise<SignUpResponse>{
+  async signUpStandard(@Payload() payload: DTO.SignUpRequestDto): Promise<SignUpResponse>{
     return this.authService.signUpStandard(payload)
   }
 }

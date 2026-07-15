@@ -1,2 +1,2 @@
-export { SignUpRequest } from './signUpRequest'
-export { SignInRequest } from './signInRequest'
+export { SignUpRequestDto } from './signUpRequest.dto'
+export { SignInRequestDto } from './signInRequest.dto'

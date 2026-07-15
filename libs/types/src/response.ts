@@ -14,3 +14,5 @@ export interface ISuccessResponse {
 export interface ICountResponse {
   count: number
 }
+
+export type CountResponse = ServiceResponse<ICountResponse>

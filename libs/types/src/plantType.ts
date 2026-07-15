@@ -1,3 +1,5 @@
+import { ISuccessResponse, ServiceResponse } from '@app/types/response'
+
 export interface IPlantType {
   plantTypeId: string
   bioName: string
@@ -16,15 +18,18 @@ export interface ICreatePlantTypeRequest {
   temperaturePreference: string
   lightPreference: string
   description: string
+  image?: string
 }
 
 export interface IUpdatePlantTypeRequest {
-  bioName: string
-  name: string
-  wateringFrequency: number
-  temperaturePreference: string
-  lightPreference: string
-  description: string
+  plantTypeId: string
+  bioName?: string
+  name?: string
+  wateringFrequency?: number
+  temperaturePreference?: string
+  lightPreference?: string
+  description?: string
+  image?: string
 }
 
 export interface IGetPlantTypeRequest {
@@ -39,4 +44,25 @@ export interface IGetPlantTypesRequest {
 export interface IDeletePlantTypeRequest {
   plantTypeId: string
 }
+
+export type ICreatePlantTypeResponse = IPlantType
+
+export type IUpdatePlantTypeResponse = IPlantType
+
+export type IGetPlantTypeResponse = IPlantType
+
+export interface IGetPlantTypesResponse {
+  items: IPlantType[]
+  count: number
+}
+
+export type IDeletePlantTypeResponse = ISuccessResponse
+
+
+export type CreatePlantTypeResponse = ServiceResponse<ICreatePlantTypeResponse>
+export type UpdatePlantTypeResponse = ServiceResponse<IUpdatePlantTypeResponse>
+export type DeletePlantTypeResponse = ServiceResponse<IDeletePlantTypeResponse>
+export type GetPlantTypeResponse = ServiceResponse<IGetPlantTypeResponse>
+export type GetPlantTypesResponse = ServiceResponse<IGetPlantTypesResponse>
+
 
