@@ -103,14 +103,14 @@ export class PlantTypeService {
 
     const skip = Math.max((page - 1) * count, 0)
 
-    const [plantTypes, total] = await this.plantTypeRepository.findAndCount({
+    const plantTypes = await this.plantTypeRepository.find({
       skip,
       take: count,
     })
 
     return {
       items: plantTypes,
-      count: total
+      count: plantTypes.length,
     }
   }
 

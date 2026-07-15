@@ -8,6 +8,7 @@ import { JwtModule } from '@nestjs/jwt'
 import { jwtConstants } from '@app/constants'
 import { AuthModule } from './auth/auth.module'
 import { PlantTypeModule } from './plant-type/plantType.module'
+import { DiseaseModule } from './disease/disease.module'
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { PlantTypeModule } from './plant-type/plantType.module'
     UserModule,
     AuthModule,
     PlantTypeModule,
+    DiseaseModule
   ],
   controllers: [],
   providers: [{

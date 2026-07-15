@@ -1,0 +1,5 @@
+export * from './getDisease.request.dto'
+export * from './getDiseases.request.dto'
+export * from './createDisease.request.dto'
+export * from './updateDisease.request.dto'
+export * from './deleteDisease.request.dto'

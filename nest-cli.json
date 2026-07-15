@@ -37,6 +37,15 @@
         "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     },
+    "disease-microservice": {
+      "type": "application",
+      "root": "apps/disease-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/disease-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/disease-microservice/tsconfig.app.json"
+      }
+    },
     "entities": {
       "type": "library",
       "root": "libs/entities",
