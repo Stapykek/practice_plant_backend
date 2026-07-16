@@ -36,6 +36,18 @@ export class UpdateDiseaseRequestDto implements IUpdateDiseaseRequest {
 
   @ApiProperty({
     type: 'string',
+    name: 'name',
+    required: false,
+    maxLength: 256,
+    example: DiseaseExample.displayName
+  })
+  @IsOptional()
+  @IsString()
+  @MaxLength(256)
+  displayName?: string
+
+  @ApiProperty({
+    type: 'string',
     name: 'treatment',
     required: false,
     example: DiseaseExample.treatment

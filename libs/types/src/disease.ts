@@ -2,17 +2,20 @@ import { ISuccessResponse, ServiceResponse } from '@app/types/response'
 
 export interface IDisease {
   diseaseId: string
+  displayName: string
   name: string
   treatment: string
 }
 
 export interface ICreateDiseaseRequest {
+  displayName: string
   name: string
   treatment: string
 }
 
 export interface IUpdateDiseaseRequest {
   diseaseId: string
+  displayName?: string
   name?: string
   treatment?: string
 }
@@ -28,10 +31,6 @@ export interface IGetDiseasesRequest {
 
 export interface IDeleteDiseaseRequest {
   diseaseId: string
-}
-
-export interface IFindDiseaseRequest {
-  name: string
 }
 
 export type ICreateDiseaseResponse = IDisease

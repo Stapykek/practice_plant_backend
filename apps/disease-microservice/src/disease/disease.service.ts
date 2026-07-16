@@ -47,7 +47,8 @@ export class DiseaseService {
     try {
       const diseases = await this.diseaseRepository.find({
         skip,
-        take: count
+        take: count,
+        order: { name: 'ASC' },
       })
 
       return {

@@ -18,6 +18,18 @@ export class CreateDiseaseRequestDto implements ICreateDiseaseRequest {
 
   @ApiProperty({
     type: 'string',
+    name: 'displayName',
+    required: true,
+    maxLength: 256,
+    example: DiseaseExample.displayName
+  })
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(256)
+  displayName: string
+
+  @ApiProperty({
+    type: 'string',
     name: 'treatment',
     required: true,
     example: DiseaseExample.treatment

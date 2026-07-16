@@ -9,5 +9,10 @@ export class CreateDiseaseRequestDto implements ICreateDiseaseRequest {
 
   @IsNotEmpty()
   @IsString()
+  @MaxLength(256)
+  displayName: string
+
+  @IsNotEmpty()
+  @IsString()
   treatment: string
 }

@@ -17,9 +17,14 @@ export class UpdateDiseaseRequestDto implements IUpdateDiseaseRequest {
   @IsOptional()
   @IsString()
   @MaxLength(256)
-  name: string
+  name?: string
 
   @IsOptional()
   @IsString()
-  treatment: string
+  @MaxLength(256)
+  displayName?: string
+
+  @IsOptional()
+  @IsString()
+  treatment?: string
 }

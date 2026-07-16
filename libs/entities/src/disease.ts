@@ -19,6 +19,15 @@ export class Disease extends BaseEntity implements IDisease {
   name: string
 
   @Column({
+    type: 'varchar',
+    name: 'displayName',
+    length: 256,
+    unique: true,
+    nullable: false
+  })
+  displayName: string
+
+  @Column({
     type: 'text',
     name: 'treatment',
     nullable: false,
