@@ -24,5 +24,9 @@ export const PlantTypeError = {
   NOT_DELETED: {
     status: HttpStatus.CONFLICT,
     message: `plant-type was not deleted`
+  },
+  UNKNOWN: {
+    status: HttpStatus.INTERNAL_SERVER_ERROR,
+    message: `unknown error`
   }
 }

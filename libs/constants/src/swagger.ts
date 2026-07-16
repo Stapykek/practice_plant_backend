@@ -1,6 +1,6 @@
 export const API_TITLE = 'Leafy API'
 export const API_DESCRIPTION = 'Бекэнд приложения по уходу за растениями'
-export const API_VERSION = '0.0.1'
+export const API_VERSION = '0.1.0'
 export const SWAGGER_ROUTE = 'api'
 export const AUTH_CONTROLLER_TAG = 'AuthController'
 export const AUTH_CONTROLLER_DESCRIPTION = 'Операции авторизации'
@@ -13,4 +13,4 @@ export const DISEASE_CONTROLLER_DESCRIPTION = 'Операции с типами 
 export const USER_PLANT_CONTROLLER_TAG = 'UserPlantController'
 export const USER_PLANT_CONTROLLER_DESCRIPTION = 'Операции с растениями пользователей (Требуется авторизация)'
 export const DISEASE_TAG_CONTROLLER_TAG = 'DiseaseTagController'
-export const DISEASE_TAG_CONTROLLER_DESCRIPTION = 'Операции с типами болезней растений (Требуется авторизация)'
+export const DISEASE_TAG_CONTROLLER_DESCRIPTION = 'Операции с отметками о болезнях растений (Требуется авторизация)'

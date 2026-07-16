@@ -6,13 +6,14 @@ import {
   MaxLength,
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
+import { PlantTypeExample } from '@app/constants'
 
 export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
   @ApiProperty({
     type: 'string',
     name: 'bioName',
     maxLength: 256,
-    example: 'zamioculcas zamiifolia',
+    example: PlantTypeExample.bioName,
     required: true
   })
   @IsNotEmpty()
@@ -24,7 +25,7 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
     type: 'string',
     name: 'name',
     maxLength: 256,
-    example: 'Замиокулькас',
+    example: PlantTypeExample.name,
     required: true,
   })
   @IsNotEmpty()
@@ -36,7 +37,7 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
     type: 'integer',
     name: 'wateringFrequency',
     required: true,
-    example: 7,
+    example: PlantTypeExample.wateringFrequency,
   })
   @IsNotEmpty()
   @IsInt()
@@ -47,9 +48,7 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
     name: 'temperaturePreference',
     maxLength: 256,
     required: true,
-    example: `Летом: от 20 до 26°C
-    Зимой: от 16 до 18°C
-    Критический минимум: 12-15°C`,
+    example: PlantTypeExample.temperaturePreference,
   })
   @IsNotEmpty()
   @MaxLength(256)
@@ -61,7 +60,7 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
     name: 'lightPreference',
     maxLength: 256,
     required: true,
-    example: `Предпочитает яркий рассеяный свет, однако летом лучше беречь от прямых солнечных лучей.`,
+    example: PlantTypeExample.lightPreference,
   })
   @IsNotEmpty()
   @MaxLength(256)
@@ -72,7 +71,7 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
     type: 'string',
     name: 'description',
     required: true,
-    example: `Долларовое дерево, или замиокулькас, — это вечнозеленое тропическое растение родом из Восточной Африки. Его используют как комнатное в разных уголках мира.`,
+    example: PlantTypeExample.description,
   })
   @IsNotEmpty()
   @IsString()

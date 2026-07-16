@@ -53,4 +53,6 @@
 * typeorm
 * pg
 * bcrypt
+* multer
+* express
 

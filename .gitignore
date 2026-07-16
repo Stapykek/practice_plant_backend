@@ -58,4 +58,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 # Older files being transferred
 /todo
 
+# Database migration files
 /libs/database/src/migrations/
+
+# Server upload files
+/upload

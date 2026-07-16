@@ -46,6 +46,15 @@
         "tsConfigPath": "apps/disease-microservice/tsconfig.app.json"
       }
     },
+    "disease-tag-microservice": {
+      "type": "application",
+      "root": "apps/disease-tag-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/disease-tag-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/disease-tag-microservice/tsconfig.app.json"
+      }
+    },
     "entities": {
       "type": "library",
       "root": "libs/entities",
@@ -107,6 +116,15 @@
       "sourceRoot": "apps/user-microservice/src",
       "compilerOptions": {
         "tsConfigPath": "apps/user-microservice/tsconfig.app.json"
+      }
+    },
+    "user-plant-microservice": {
+      "type": "application",
+      "root": "apps/user-plant-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-plant-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-plant-microservice/tsconfig.app.json"
       }
     },
     "utils": {

@@ -43,7 +43,6 @@ export class UserPlant extends BaseEntity implements IUserPlant {
     type: 'varchar',
     name: 'nickname',
     length: 256,
-    unique: true,
     nullable: false
   })
   nickname: string
@@ -53,7 +52,7 @@ export class UserPlant extends BaseEntity implements IUserPlant {
     name: 'image',
     nullable: true
   })
-  image?: string
+  image?: string | null
 
   @ManyToOne(() => User, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'user_id' })

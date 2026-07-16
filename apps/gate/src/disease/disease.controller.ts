@@ -106,7 +106,7 @@ export class DiseaseController {
   @ApiBearerAuth()
   @ApiOperation({summary: 'Удалить тип болезни растений (Только администраторы)'})
   @Delete('/admin')
-  async deletePlantType(@Body() body: DTO.DeleteDiseaseRequestDto): Promise<IDeleteDiseaseResponse> {
+  async deleteDisease(@Body() body: DTO.DeleteDiseaseRequestDto): Promise<IDeleteDiseaseResponse> {
     const result = await lastValueFrom(
       this.natsClient.send<DeleteDiseaseResponse>({cmd: DiseaseSubject.DELETE_DISEASE}, body)
     )

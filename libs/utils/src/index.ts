@@ -1,2 +1,5 @@
 export * from './handle-service-response'
 export * from './user-decorator'
+export * from './files'
+export * from './handle-image-response'
+export * from './extract-host'

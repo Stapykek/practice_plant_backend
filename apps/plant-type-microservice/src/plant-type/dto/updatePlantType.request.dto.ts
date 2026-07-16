@@ -38,5 +38,5 @@ export class UpdatePlantTypeRequestDto implements IUpdatePlantTypeRequest {
 
   @IsOptional()
   @IsString()
-  image?: string
+  image?: string | null
 }

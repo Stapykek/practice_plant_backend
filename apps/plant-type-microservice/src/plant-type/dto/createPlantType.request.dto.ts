@@ -28,5 +28,5 @@ export class CreatePlantTypeRequestDto implements ICreatePlantTypeRequest {
 
   @IsOptional()
   @IsString()
-  image?: string
+  image?: string | null
 }

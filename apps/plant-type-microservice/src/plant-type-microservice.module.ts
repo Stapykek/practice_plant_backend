@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { DatabaseModule } from '@app/database'
-import { PlantTypeModule } from './plant-type/plant-type.module'
+import { PlantTypeModule } from './plant-type/plantType.module'
 
 @Module({
   imports: [

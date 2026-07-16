@@ -62,5 +62,5 @@ export class PlantType extends BaseEntity implements IPlantType {
     name: 'image',
     nullable: true
   })
-  image?: string
+  image?: string | null
 }

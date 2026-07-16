@@ -8,7 +8,7 @@ export interface IPlantType {
   temperaturePreference: string
   lightPreference: string
   description: string
-  image?: string
+  image?: string | null
 }
 
 export interface ICreatePlantTypeRequest {
@@ -18,7 +18,7 @@ export interface ICreatePlantTypeRequest {
   temperaturePreference: string
   lightPreference: string
   description: string
-  image?: string
+  image?: string | null
 }
 
 export interface IUpdatePlantTypeRequest {
@@ -29,7 +29,7 @@ export interface IUpdatePlantTypeRequest {
   temperaturePreference?: string
   lightPreference?: string
   description?: string
-  image?: string
+  image?: string | null
 }
 
 export interface IGetPlantTypeRequest {
@@ -42,6 +42,10 @@ export interface IGetPlantTypesRequest {
 }
 
 export interface IDeletePlantTypeRequest {
+  plantTypeId: string
+}
+
+export interface IDeletePlantTypeImageRequest {
   plantTypeId: string
 }
 
@@ -58,10 +62,12 @@ export interface IGetPlantTypesResponse {
 
 export type IDeletePlantTypeResponse = ISuccessResponse
 
+export type IDeletePlantTypeImageResponse = ISuccessResponse
 
 export type CreatePlantTypeResponse = ServiceResponse<ICreatePlantTypeResponse>
 export type UpdatePlantTypeResponse = ServiceResponse<IUpdatePlantTypeResponse>
 export type DeletePlantTypeResponse = ServiceResponse<IDeletePlantTypeResponse>
+export type DeletePlantTypeImageResponse = ServiceResponse<IDeletePlantTypeImageResponse>
 export type GetPlantTypeResponse = ServiceResponse<IGetPlantTypeResponse>
 export type GetPlantTypesResponse = ServiceResponse<IGetPlantTypesResponse>
 

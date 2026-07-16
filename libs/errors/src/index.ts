@@ -1,3 +1,6 @@
 export * from './user'
 export * from './auth'
 export * from './plantType'
+export * from './disease'
+export * from './userPlant'
+export * from './diseaseTag'
